@@ -10,3 +10,7 @@ class ExpressionAnalyzer:
     
     def _is_operator(self, c):
         return c in self.operators
+
+    def _tokenize(self, expression):
+        """ Separando cada caratere de texto """
+        return re.findall(r'\d+|[+/*()-]', expression)
