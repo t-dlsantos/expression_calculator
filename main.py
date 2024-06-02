@@ -73,3 +73,8 @@ class ExpressionAnalyzer:
         elif root.key == '/':
             return left_val / right_val
 
+    def evaluate_expression(self, expression):
+        tokens = self._tokenize(expression)
+        postfix_tokens = self._infix_to_postfix(tokens)
+        ast_root = self._construct_tree(postfix_tokens)
+        return self._evaluate_tree(ast_root)
