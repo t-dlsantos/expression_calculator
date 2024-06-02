@@ -41,3 +41,21 @@ class ExpressionAnalyzer:
         Separa os numeros e operadores da expressão
         """
         return output
+    
+    def _construct_tree(self, postfix_tokens):
+
+        stack = Pilha()
+        for token in postfix_tokens:
+            if token.isdigit():
+                node = NodeTree(token)
+                stack.push(node)
+            else:
+                node = NodeTree(token)
+                node1 = stack.pop()
+                node2 = stack.pop()
+                node.right = node1
+                node.left = node2
+                stack.push(node)
+                print(f'Created node with operator {token}: left={node.left.key}, right={node.right.key}')
+        return stack.pop()
+    
