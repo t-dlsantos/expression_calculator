@@ -59,3 +59,17 @@ class ExpressionAnalyzer:
                 print(f'Created node with operator {token}: left={node.left.key}, right={node.right.key}')
         return stack.pop()
     
+    def _evaluate_tree(self, root):
+        if root.left is None and root.right is None:
+            return int(root.key)
+        left_val = self._evaluate_tree(root.left)
+        right_val = self._evaluate_tree(root.right)
+        if root.key == '+':
+            return left_val + right_val
+        elif root.key == '-':
+            return left_val - right_val
+        elif root.key == '*':
+            return left_val * right_val
+        elif root.key == '/':
+            return left_val / right_val
+
