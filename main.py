@@ -78,3 +78,10 @@ class ExpressionAnalyzer:
         postfix_tokens = self._infix_to_postfix(tokens)
         ast_root = self._construct_tree(postfix_tokens)
         return self._evaluate_tree(ast_root)
+
+# Exemplo de uso:
+# expression = "3 + 5 * ( 2 - 8 )"  # 3 + 5 * -6 = 3 - 30 = -27
+expression = "2 + 3 * ( 2 - 900 )"
+analyzer = ExpressionAnalyzer()
+result = analyzer.evaluate_expression(expression)
+print(f"O resultado da expressão '{expression}' é {result}")
