@@ -8,3 +8,5 @@ class ExpressionAnalyzer:
         self.operators = set(['+', '-', '*', '/'])
         self.priority = {'+':1, '-':1, '*':2, '/':2}
     
+    def _is_operator(self, c):
+        return c in self.operators
