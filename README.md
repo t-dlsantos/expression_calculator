@@ -38,7 +38,7 @@ Follow the instructions below to run the project:
 
 6. Finally, open the project in your browser at the following address:
     ```
-    http://localhost:5000/index.html
+    http://localhost:5000/
     ```
 
 Done! Now you should be able to see and interact with the project's graphical interface.

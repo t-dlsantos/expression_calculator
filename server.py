@@ -13,7 +13,7 @@ def calculate():
 
     return jsonify({'result': result})
 
-@app.route('/index.html')
+@app.route('/')
 def serve_html():
     return render_template('index.html')
 
