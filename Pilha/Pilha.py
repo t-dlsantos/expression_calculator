@@ -1,4 +1,4 @@
-from Node import Node
+from Pilha.Node import Node
 
 class Pilha:
     def __init__(self):

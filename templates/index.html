@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    ">
 </head>
 <body> 
     <div class="header">
-      <img src="logo.svg" alt="Calculator logo">
+      <img src="{{ url_for('static', filename='logo.svg') }}" alt="Calculator logo">
       <p class="logo-title">Expression Calculator</p>    
     </div>
     <div class="hero">
@@ -25,13 +26,13 @@
                 </div>
                 <div class="buttons">
                     <button class="all-clear">AC</button>
-                    <button class="clear">C</button>
-                    <button data-operator="%">%</button>
-                    <button data-operator="÷">÷</button>
+                    <button data-operator="(">(</button>
+                    <button data-operator=")">)</button>
+                    <button data-operator="/">/</button>
                     <button data-number="7">7</button>
                     <button data-number="8">8</button>
                     <button data-number="9">9</button>
-                    <button data-operator="x">x</button>
+                    <button data-operator="*">*</button>
                     <button data-number="4">4</button>
                     <button data-number="5">5</button>
                     <button data-number="6">6</button>
@@ -50,7 +51,7 @@
     <div class"git-hub">
       <a href="https://github.com/t-dlsantos/expression_calculator" target=__blank>
         <p class="link">Github link</p>
-        <img src="github.svg" alt="Github icon link">
+        <img src="{{ url_for('static', filename='github.svg') }}" alt="Github icon link">
       </a>
     </div>
 </body>
